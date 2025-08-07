@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="todo-list.css">
+</head>
+<body>
+    <div class="todo-container">
+        <div class="header">
+            <h1><i class="fas fa-tasks"></i> My Tasks</h1>
+        </div>
+
+        <ul class="task-list">
+            <li class="task-item" data-priority="high">
+                <input type="checkbox" id="task1" checked>
+                <label for="task1">
+                    <span class="checkmark"></span>
+                    <span class="task-text">Review project requirements</span>
+                    <span class="priority high">High</span>
+                    <span class="task-date">Due: Today</span>
+                </label>
+            </li>
+            <li class="task-item" data-priority="high">
+                <input type="checkbox" id="task2">
+                <label for="task2">
+                    <span class="checkmark"></span>
+                    <span class="task-text">Schedule team meeting</span>
+                    <span class="priority high">High</span>
+                    <span class="task-date">Today</span>
+                </label>
+            </li>
+            <li class="task-item" data-priority="medium">
+                <input type="checkbox" id="task3">
+                <label for="task3">
+                    <span class="checkmark"></span>
+                    <span class="task-text">Prepare presentation slides</span>
+                    <span class="priority medium">Medium</span>
+                    <span class="task-date">Tomorrow</span>
+                </label>
+            </li>
+            <li class="task-item" data-priority="medium">
+                <input type="checkbox" id="task4">
+                <label for="task4">
+                    <span class="checkmark"></span>
+                    <span class="task-text">Update project documentation</span>
+                    <span class="priority medium">Medium</span>
+                    <span class="task-date">This week</span>
+                </label>
+            </li>
+            <li class="task-item" data-priority="low">
+                <input type="checkbox" id="task5">
+                <label for="task5">
+                    <span class="checkmark"></span>
+                    <span class="task-text">Research new design trends</span>
+                    <span class="priority low">Low</span>
+                    <span class="task-date">Next week</span>
+                </label>
+            </li>
+            <li class="task-item" data-priority="low">
+                <input type="checkbox" id="task6">
+                <label for="task6">
+                    <span class="checkmark"></span>
+                    <span class="task-text">Organize workspace</span>
+                    <span class="priority low">Low</span>
+                    <span class="task-date">This week</span>
+                </label>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

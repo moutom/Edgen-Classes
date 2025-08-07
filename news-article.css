@@ -1,0 +1,74 @@
+body {
+    background-color: #fdfdfd;
+    color: #333;
+    /* 1. Use a sans-serif font for the body */
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+article {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-left: 5px solid #007bff;
+}
+
+h1, h2 {
+    /* 2. Use a serif font for headings */
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    /* 3. Adjust letter-spacing for headings */
+    letter-spacing: 1px;
+    color: #222;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5em;
+}
+
+.date {
+    color: #888;
+    font-style: italic;
+    /* 4. Align text to the right */
+    text-align: right;
+    margin-bottom: 2em;
+}
+
+p {
+    margin-bottom: 1.2em;
+    /* 5. Justify paragraph text */
+    text-align: justify;
+}
+
+/* 6. Style the first letter of the intro paragraph */
+.intro::first-letter {
+    font-family: 'Lora', serif;
+    font-size: 4em;
+    float: left;
+    line-height: 0.8;
+    margin-right: 0.1em;
+    color: #007bff;
+}
+
+blockquote {
+    border-left: 4px solid #ccc;
+    padding-left: 20px;
+    margin: 2em 0;
+    font-style: italic;
+    color: #666;
+    font-size: 1.1em;
+}

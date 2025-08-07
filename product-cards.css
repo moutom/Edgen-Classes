@@ -1,0 +1,121 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+    text-align: center;
+}
+
+.product-card {
+    display: inline-block;
+    vertical-align: top; /* Align cards to the top */
+    width: 280px; /* Increased width for more content */
+    margin: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    color: white;
+    background-clip: border-box;
+    overflow: hidden; /* Hide overflowing content from image */
+    text-align: left; /* Align text to the left */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Card Content --- */
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Ensure image covers the area */
+    display: block;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.25em;
+}
+
+.description {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    min-height: 50px; /* Give a consistent height */
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.analogous .description {
+    color: #c3b1e1; /* Light Purple */
+}
+
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 0;
+}
+
+
+/* --- Card Colors --- */
+
+/* 1. Analogous: Blue */
+.analogous {
+    background-color: #2b2453; /* Dark Slate Blue / Indigo */
+}
+.analogous:hover {
+    background-color: #4b0082; /* Indigo */
+}
+
+/* 2. Complementary: Blue and Orange */
+.complementary {
+    background-color: #0a3254; /* Blue */
+}
+.complementary:hover {
+    background-color: #155186; /* Darker Blue */
+}
+
+/* 3. Monochrome: Purple */
+.monochrome {
+    background-color: #343a40; /* Dark Gray */
+}
+.monochrome:hover {
+    background-color: #495057; /* Lighter Gray */
+}
+
+/* --- Price Colors --- */
+
+.analogous h3 {
+    color: #9370db; /* Medium Purple */
+}
+
+.analogous .price {
+    color: #b19cd9; /* Light Purple */
+    font-weight: bold;
+}
+
+.complementary h3 {
+    color: #0d6efd; /* Blue */
+}
+
+.complementary .price {
+    color: #0d6efd; /* Blue */
+}
+
+.monochrome .price {
+    color: #e9ecef; /* Light Gray */
+}
+
+.monochrome img {
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+.monochrome:hover img {
+    filter: grayscale(0%);
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Progress Bar</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Smooth transition for the progress bar's width */
+        .progress-bar-fill {
+            transition: width 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="w-full max-w-md p-8 bg-white rounded-xl shadow-lg space-y-4">
+        
+        <!-- Header Text -->
+        <div>
+            <h1 class="text-xl font-bold text-gray-800">Uploading File...</h1>
+            <p class="text-sm text-gray-500">Please wait while we process your request.</p>
+        </div>
+
+        <!-- Progress Bar Container -->
+        <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+            <!-- The actual progress bar that fills up -->
+            <div id="progressBar" class="progress-bar-fill bg-blue-600 h-4 rounded-full" style="width: 0%"></div>
+        </div>
+
+        <!-- Progress Percentage Text -->
+        <div class="text-right">
+            <span id="progressLabel" class="text-sm font-semibold text-gray-600">0%</span>
+        </div>
+
+    </div>
+
+    <script>
+        // This script runs when the page has finished loading
+        window.onload = function() {
+            const progressBar = document.getElementById('progressBar');
+            const progressLabel = document.getElementById('progressLabel');
+            
+            let currentWidth = 0;
+            const targetWidth = 90; // The progress will stop at 90%
+            const intervalTime = 50; // Update every 50 milliseconds
+
+            // Set an interval to increase the progress bar width
+            const interval = setInterval(() => {
+                if (currentWidth >= targetWidth) {
+                    // Stop the interval when the target width is reached
+                    clearInterval(interval);
+                } else {
+                    // Increment the width
+                    currentWidth++;
+                    // Update the style of the progress bar
+                    progressBar.style.width = currentWidth + '%';
+                    // Update the text label
+                    progressLabel.textContent = currentWidth + '%';
+                }
+            }, intervalTime);
+        };
+    </script>
+
+</body>
+</html>

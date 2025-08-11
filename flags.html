@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Flags</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+            perspective: 1000px;
+        }
+    
+        .flag {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transform-origin: left center;
+            animation: flag-wave 7s infinite alternate ease-in-out;
+        }
+    
+        .flag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                rgba(0, 0, 0, 0.15) 5%,
+                transparent 10%
+            );
+            background-size: 200% 100%;
+            animation: ripple 5s infinite linear;
+        }
+    
+        @keyframes flag-wave {
+            from {
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+            to {
+                transform: rotateY(-20deg) rotateX(3deg);
+            }
+        }
+    
+        @keyframes ripple {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: -200% 0;
+            }
+        }
+    
+        .france { display: flex; }
+        .france .stripe { flex: 1; height: 100%; }
+        .france .blue { background-color: #0055A4; }
+        .france .white { background-color: white; }
+        .france .red { background-color: #EF4135; }
+        .japan {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .japan::after {
+            content: '';
+            width: 120px;
+            height: 120px;
+            background-color: #BC002D;
+            border-radius: 50%;
+        }
+        .japan { animation-delay: -2s; }
+        .japan::before { animation-delay: -1.5s; }
+        h1 {
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Animated Flags</h1>
+
+    <div class="flag france">
+        <div class="stripe blue"></div>
+        <div class="stripe white"></div>
+        <div class="stripe red"></div>
+    </div>
+
+    <div class="flag japan"></div>
+</body>
+</html>
